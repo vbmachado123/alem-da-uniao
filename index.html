@@ -6,11 +6,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/style.css">
-    <!-- <link rel="stylesheet" href="assets/bootstrap/w3.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style>
+        body,
+        html {
+            height: 100%
+        }
+        
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif
+        }
+        
+        .menu {
+            display: none
+        }
+        
+        .bgimg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("./assets/fundo.jpg");
+            min-height: 90%;
+        }
+    </style>
 </head>
 
 <body bgcolor="#DADFE6">
+
+    <header>
+        <!--header1.html é o da w3schools -->
+        <iframe src="./common/header1.html"></iframe>
+    </header>
+
+    <!-- botoes quem somos/seja voluntario -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+        <div class="w3-display-middle w3-center">
+            <div class="w3-row">
+                <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+                    <div class="w3-half tablink w3-bottombar w3-grey w3-padding w3-center">Quem Somos?</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+                    <div class="w3-half tablink w3-bottombar w3-grey w3-padding w3-center">Seja voluntario</div>
+                </a>
+            </div>
+        </div>
+    </header>
 
     <div class="slider-container">
         <span id="slider-image-1"></span>
@@ -37,7 +88,10 @@
         </div>
     </div>
 
+    <hr>
+
     <!-- Noticias -->
+    <!-- Noticia 1 -->
     <div class="w3-row w3-padding-64 " id="about">
         <div class="w3-col m6 w3-padding-large w3-hide-small">
             <img src="./assets/images/artigos/artigo-1.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
@@ -53,18 +107,60 @@
 
     <hr>
 
-    <div class="w3-row w3-center w3-padding-64" id="about">
+    <!-- Noticia 2 -->
+    <div class="w3-row w3-padding-64" id="about">
         <div class="w3-col m6 w3-padding-large">
             <h2 class="w3-justify">Natal mágico para todos.</h2>
             <p class="w3-large w3-justify">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use ingredients.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Ver Mais..</button>
+            <p><a href="#work" class="w3-button w3-black w3-
+left"> View Our Works</a></p>
+
         </div>
         <div class="w3-col m6 w3-padding-large w3-hide-small">
-            <img src="./assets/images/artigos/artigo-1.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+            <img src="./assets/images/artigos/artigo-2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
         </div>
+
     </div>
 
+    <!-- abre ao clicar em quem somos -->
+    <div id="London" class="w3-container city w3-center" style="display:none">
+        <h2> QUEM SOMOS?</h2>
+        <p>Somos o Além da união, um projeto social criado por amigos, sem patrocínio, sem fins lucrativos, com pessoas com o mesmo ideal, nossa intenção é fazer a diferença e tornar a vida daqueles que necessitam, mais felizes. O além da união promove ações
+            sociais voltadas para populações carentes, principalmente de rua. Atuamos em datas comemorativas (Ex: natal, páscoa, dias das crianças e etc.). </p>
+        <p><a href="#work" class="w3-button w3-black w3-
+    left">Ver Mais...</a></p>
+    </div>
+
+    <!-- abre ao clicar em seja voluntario -->
+    <div id="Paris" class="w3-container city w3-center" style="display:none">
+        <h2>SEJA VOLUNTÁRIO</h2>
+        <p>No momento, não estamos recrutando voluntários, pois muitos se candidatam, mas acabam não comparecendo na hora, caso você realmente tenha vontade de estar participando do projeto, clique em "ver mais" para saber como entrar em contato.</p>
+        <p><a href="#work" class="w3-button w3-black w3-
+    left"> Ver Mais...</a></p>
+    </div>
+
+
+    <footer>
+        <iframe src="./common/footer.html"></iframe>
+    </footer>
+
+    <!-- animação dos botoes quem somos/seja voluntario -->
+    <script>
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.firstElementChild.className += " w3-border-red";
+        }
+    </script>
 </body>
 
 </html>
